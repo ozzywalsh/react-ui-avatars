@@ -29,6 +29,8 @@ Example:
 <UIAvatar name='Warren Zevon' size={128} />
 ```
 
+Extra props are passed on to `<img />` element.
+
 ## Global Settings
 Global settings for your app can be configured.
 The properties are the same as the props.
@@ -50,8 +52,6 @@ ReactDOM.render(
   document.getElementById('#container')
 );
 ```
-
-Extra props are passed on to `<img />` element.
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
