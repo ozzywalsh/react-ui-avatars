@@ -20,6 +20,7 @@ ReactDOM.render(
 
 ## Options
 Pass props same as  specified at https://ui-avatars.com.
+
 Example:
 ```javascript
 <UIAvatar name='Warren Zevon' size={128} />
