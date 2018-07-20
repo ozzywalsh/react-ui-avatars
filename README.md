@@ -20,7 +20,7 @@ import React from 'react';
 import UIAvatar from 'react-ui-avatars';
 
 ReactDOM.render(
-  <UIAvatar name='Warren Zevon' />,
+  <UIAvatar name='Warren Zevon' color='#551a8b' />,
   document.getElementById('#container')
 );
 ```
