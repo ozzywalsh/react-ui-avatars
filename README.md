@@ -6,7 +6,7 @@
 
 Wrapper component for https://ui-avatars.com
 
-Credit to <a href="https://github.com/LasseRafn">@LasseRafn</a>for his awesome API.
+Credit to <a href="https://github.com/LasseRafn" target="_blank">@LasseRafn</a> for his awesome API.
 
 ## Installing
 Using npm:
