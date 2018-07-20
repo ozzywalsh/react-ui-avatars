@@ -4,7 +4,19 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-Describe react-ui-avatars here.
+Wrapper component for https://ui-avatars.com
+
+## Usage
+```
+impoty ReactDOM from 'react-dom';
+import React from 'react';
+import UIAvatar from 'react-ui-avatars';
+
+ReactDOM.render(
+  <UIAvatar name='Mary Smith' />,
+  document.getElementById('#container')
+);
+```
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
