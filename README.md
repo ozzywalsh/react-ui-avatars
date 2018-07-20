@@ -6,6 +6,10 @@
 
 Wrapper component for https://ui-avatars.com
 
+## Installing
+Using npm:
+`npm install react-ui-avatars`
+
 ## Usage
 ```javascript
 impoty ReactDOM from 'react-dom';
@@ -17,13 +21,34 @@ ReactDOM.render(
   document.getElementById('#container')
 );
 ```
-
 ## Options
 Pass props same as  specified at https://ui-avatars.com.
 
 Example:
 ```javascript
 <UIAvatar name='Warren Zevon' size={128} />
+```
+
+## Global Settings
+Global settings for your app can be configured.
+The properties are the same as the props.
+
+The global settings can be overriden on an individual instance
+of the component by passing the prop.
+```javascript
+impoty ReactDOM from 'react-dom';
+import React from 'react';
+import UIAvatar from 'react-ui-avatars';
+
+UIAvatar.settings = {
+  size: 128,
+  rounded: true
+};
+
+ReactDOM.render(
+  <UIAvatar name='Warren Zevon' />,
+  document.getElementById('#container')
+);
 ```
 
 Extra props are passed on to `<img />` element.
