@@ -6,6 +6,8 @@
 
 Wrapper component for https://ui-avatars.com
 
+Credit to @LasseRafn for his awesome API.
+
 ## Installing
 Using npm:
 
