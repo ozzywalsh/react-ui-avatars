@@ -8,6 +8,7 @@ Wrapper component for https://ui-avatars.com
 
 ## Installing
 Using npm:
+
 `npm install react-ui-avatars`
 
 ## Usage
