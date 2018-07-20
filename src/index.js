@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import _ from 'lodash';
 import qs from 'qs';
 
 class UIAvatar extends Component {
@@ -8,20 +9,41 @@ class UIAvatar extends Component {
 	 */
 	static settings = {}
 
-	getURL (options) {
+	static APIOptions = [
+		'name',
+		'size',
+		'font-size',
+		'length',
+		'rounded',
+		'background',
+		'color',
+		'uppercase',
+	]
+
+
+	getURL (settings) {
 		const API_URL = 'https://ui-avatars.com/api/'
-		const query = qs.stringify({...UIAvatar.settings, ...options});
+		const query = qs.stringify({...UIAvatar.settings, ...settings});
 
 		const imageURL = `${API_URL}?${query}`
 
 		return imageURL;
 	}
 
+	getSettings (props) {
+		return _.pickBy(props, (value, key) => _.includes(UIAvatar.APIOptions, key));
+	}
+
+	getExtraProps (props) {
+		return _.pickBy(props, (value, key) => !(_.includes(UIAvatar.APIOptions, key)));
+	}
+
   render() {
 		const imageURL = this.getURL(this.props);
+		const extraProps = this.getExtraProps(this.props);
 
 		return (
-			<img src={imageURL} {...this.props} />
+			<img src={imageURL} alt={this.props.name} {...extraProps} />
 		);
   }
 }
