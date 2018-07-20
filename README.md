@@ -7,7 +7,7 @@
 Wrapper component for https://ui-avatars.com
 
 ## Usage
-```
+```javascript
 impoty ReactDOM from 'react-dom';
 import React from 'react';
 import UIAvatar from 'react-ui-avatars';
