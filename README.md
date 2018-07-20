@@ -20,6 +20,7 @@ ReactDOM.render(
 
 ## Options
 Pass props same as  specified at https://ui-avatars.com.
+
 Extra props are passed on to `<img />` element.
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
