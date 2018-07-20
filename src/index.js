@@ -3,8 +3,8 @@ import qs from 'qs';
 
 export default class extends Component {
 	getURL (options) {
-		const API_URL = 'https://ui-avatars.com/'
-		const query = qs.parse(options);
+		const API_URL = 'https://ui-avatars.com/api/'
+		const query = qs.stringify(options);
 
 		const imageURL = `${API_URL}?${query}`
 

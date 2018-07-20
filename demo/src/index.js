@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 
-import Example from '../../src'
+import UIAvatar from '../../src'
 
 class Demo extends Component {
   render() {
     return <div>
       <h1>react-ui-avatars Demo</h1>
-      <Example/>
+      <UIAvatar />
     </div>
   }
 }
