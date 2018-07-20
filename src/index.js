@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
 import qs from 'qs';
 
-export default class extends Component {
+class UIAvatar extends Component {
+	static settings = {}
+
 	getURL (options) {
 		const API_URL = 'https://ui-avatars.com/api/'
-		const query = qs.stringify(options);
+		const query = qs.stringify({...UIAvatar.settings, ...options});
 
 		const imageURL = `${API_URL}?${query}`
 
@@ -19,3 +21,5 @@ export default class extends Component {
 		);
   }
 }
+
+export default UIAvatar;
