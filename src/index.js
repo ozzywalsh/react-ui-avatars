@@ -2,6 +2,10 @@ import React, {Component} from 'react'
 import qs from 'qs';
 
 class UIAvatar extends Component {
+	/* Global settings object
+	 * which can be set by the user of the component
+	 * This can be overriden by passing props to individual instances
+	 */
 	static settings = {}
 
 	getURL (options) {
