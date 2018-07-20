@@ -13,13 +13,17 @@ import React from 'react';
 import UIAvatar from 'react-ui-avatars';
 
 ReactDOM.render(
-  <UIAvatar name='Mary Smith' />,
+  <UIAvatar name='Warren Zevon' />,
   document.getElementById('#container')
 );
 ```
 
 ## Options
 Pass props same as  specified at https://ui-avatars.com.
+Example:
+```javascript
+<UIAvatar name='Warren Zevon' size={128} />
+```
 
 Extra props are passed on to `<img />` element.
 
