@@ -1,9 +1,10 @@
 # react-ui-avatars
 
+<!--
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
-
+-->
 Wrapper component for https://ui-avatars.com
 
 Credit to <a href="https://github.com/LasseRafn" target="_blank">@LasseRafn</a> for his awesome API.
@@ -56,6 +57,7 @@ ReactDOM.render(
 );
 ```
 
+<!--
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
 
@@ -64,3 +66,5 @@ ReactDOM.render(
 
 [coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/user/repo
+-->
+
