@@ -2,8 +2,8 @@
   "name": "react-ui-avatars",
   "version": "2.0.1",
   "description": "React component for ui-avatars.com",
-  "homepage": "",
-  "repository": "",
+  "homepage": "https://github.com/ozzywalsh/react-ui-avatars",
+  "repository": "ozzywalsh/react-ui-avatars",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
