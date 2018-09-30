@@ -3,7 +3,7 @@ module.exports = {
   npm: {
     esModules: true,
     umd: {
-      global: 'ReactUIAvatars',
+      global: 'UIAvatar',
       externals: {
         react: 'React'
       }
