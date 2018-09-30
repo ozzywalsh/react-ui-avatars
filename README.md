@@ -11,6 +11,9 @@ Generate avatars from a users intials.
 
 Credit to <a href="https://github.com/LasseRafn" target="_blank">@LasseRafn</a> for his awesome API.
 
+## Demo
+https://codepen.io/novigradian/pen/qMwJgg
+
 ## Installing
 Using npm:
 
