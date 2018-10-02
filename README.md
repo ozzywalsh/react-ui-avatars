@@ -21,7 +21,7 @@ Using npm:
 
 ## Usage
 ```javascript
-impoty ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import React from 'react';
 import UIAvatar from 'react-ui-avatars';
 
@@ -47,7 +47,7 @@ The properties are the same as the props.
 The global settings can be overriden on an individual instance
 of the component by passing the prop.
 ```javascript
-impoty ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import React from 'react';
 import UIAvatar from 'react-ui-avatars';
 
