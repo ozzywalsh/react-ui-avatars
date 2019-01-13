@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import qs from 'qs';
 
 class UIAvatar extends Component {
-  /* Global settings object
-   * which can be set by the user of the component
-   * This can be overriden by passing props to individual instances
-   */
+  static propTypes = {
+    name: PropTypes.string,
+    size: PropTypes.number,
+    'font-size': PropTypes.number,
+    initialCharacters: PropTypes.number,
+    rounded: PropTypes.bool,
+    fontColor: PropTypes.string,
+    uppercase: PropTypes.boolean
+  }
+
   static settings = {}
+  static defaultProps = this.settings;
 
   static APIOptions = [
     'name',
@@ -39,10 +47,9 @@ class UIAvatar extends Component {
 
   render () {
     const imageURL = this.getURL(this.props);
-    const extraProps = this.getExtraProps(this.props);
 
     return (
-      <img src={imageURL} alt={this.props.name} {...extraProps} />
+      <img src={imageURL} alt={this.props.name} {...this.props} />
     );
   }
 }
