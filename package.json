@@ -30,7 +30,8 @@
   "devDependencies": {
     "nwb": "0.21.x",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "semistandard": "^13.0.1"
   },
   "author": "",
   "license": "MIT",
