@@ -29,6 +29,7 @@
     "react": "16.x"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "husky": "^1.3.1",
     "nwb": "0.21.x",
     "react": "^16.4.1",
@@ -40,6 +41,10 @@
   "keywords": [
     "react-component"
   ],
+  "semistandard": {
+    "parser": "babel-eslint",
+    "env": "mocha"
+  },
   "husky": {
     "pre-commit": "npm run lint"
   }
