@@ -1,37 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import qs from 'qs';
+import querystring from 'querystring';
 
-class UIAvatar extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-    size: PropTypes.number,
-    'font-size': PropTypes.number,
-    initialCharacters: PropTypes.number,
-    rounded: PropTypes.bool,
-    fontColor: PropTypes.string,
-    uppercase: PropTypes.boolean
-  }
+function removeUndefinedOrNull (obj) {
+  Object.keys(obj).forEach(key => {
+    if (obj[key] === undefined || obj[key] === null) delete obj[key];
+  });
 
-  static settings = {}
-  static defaultProps = this.settings;
-
-  getURL (settings) {
-    const API_URL = 'https://ui-avatars.com/api/';
-    const query = qs.stringify({ ...UIAvatar.settings, ...settings });
-
-    const imageURL = `${API_URL}?${query}`;
-
-    return imageURL;
-  }
-
-  render () {
-    const imageURL = this.getURL(this.props);
-
-    return (
-      <img src={imageURL} alt={this.props.name} {...this.props} />
-    );
-  }
+  return obj;
 }
+
+function UIAvatar ({ size, fontSize, length, name, rounded, background, color, uppercase, ...props }) {
+  const query = querystring.stringify(removeUndefinedOrNull({
+    size,
+    'font-size': fontSize,
+    length,
+    name,
+    rounded,
+    background,
+    color,
+    uppercase
+  }));
+
+  return <img src={'https://ui-avatars.com/api/?' + query} alt={name} {...props} />;
+}
+UIAvatar.propTypes = {
+  size: PropTypes.number,
+  fontSize: PropTypes.number,
+  length: PropTypes.number,
+  name: PropTypes.string,
+  rounded: PropTypes.bool,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  uppercase: PropTypes.boolean
+};
+UIAvatar.settings = {};
+UIAvatar.defaultProps = UIAvatar.settings;
 
 export default UIAvatar;
