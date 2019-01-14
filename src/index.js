@@ -1,51 +1,40 @@
-import React, {Component} from 'react'
-import _ from 'lodash';
-import qs from 'qs';
+import React from 'react';
+import PropTypes from 'prop-types';
+import querystring from 'querystring';
 
-class UIAvatar extends Component {
-	/* Global settings object
-	 * which can be set by the user of the component
-	 * This can be overriden by passing props to individual instances
-	 */
-	static settings = {}
+function removeUndefinedOrNull (obj) {
+  Object.keys(obj).forEach(key => {
+    if (obj[key] === undefined || obj[key] === null) delete obj[key];
+  });
 
-	static APIOptions = [
-		'name',
-		'size',
-		'font-size',
-		'length',
-		'rounded',
-		'background',
-		'color',
-		'uppercase',
-	]
-
-
-	getURL (settings) {
-		const API_URL = 'https://ui-avatars.com/api/'
-		const query = qs.stringify({...UIAvatar.settings, ...settings});
-
-		const imageURL = `${API_URL}?${query}`
-
-		return imageURL;
-	}
-
-	getSettings (props) {
-		return _.pickBy(props, (value, key) => _.includes(UIAvatar.APIOptions, key));
-	}
-
-	getExtraProps (props) {
-		return _.pickBy(props, (value, key) => !(_.includes(UIAvatar.APIOptions, key)));
-	}
-
-  render() {
-		const imageURL = this.getURL(this.props);
-		const extraProps = this.getExtraProps(this.props);
-
-		return (
-			<img src={imageURL} alt={this.props.name} {...extraProps} />
-		);
-  }
+  return obj;
 }
+
+function UIAvatar ({ size, fontSize, length, name, rounded, background, color, uppercase, ...props }) {
+  const query = querystring.stringify(removeUndefinedOrNull({
+    size,
+    'font-size': fontSize,
+    length,
+    name,
+    rounded,
+    background,
+    color,
+    uppercase
+  }));
+
+  return <img src={'https://ui-avatars.com/api/?' + query} alt={name} {...props} />;
+}
+UIAvatar.propTypes = {
+  size: PropTypes.number,
+  fontSize: PropTypes.number,
+  length: PropTypes.number,
+  name: PropTypes.string,
+  rounded: PropTypes.bool,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  uppercase: PropTypes.boolean
+};
+UIAvatar.settings = {};
+UIAvatar.defaultProps = UIAvatar.settings;
 
 export default UIAvatar;
